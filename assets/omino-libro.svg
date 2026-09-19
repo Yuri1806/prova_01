@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" fill="none" stroke="#24231f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Il custode delle pagine</title>
+  <desc>Omino-libro con pagine a ventaglio, riquadro blu, occhiali tondi, grandi baffi, cravatta e bastone, ridisegnato dallo schizzo di Yuri.</desc>
+  <g id="figura">
+    <g id="gambe">
+      <g id="gamba-sinistra"><path d="M143 310 L131 367 L125 399"/><path d="M125 387 Q110 389 101 405 L77 417 Q66 429 91 430 L139 424 L139 407 Z" fill="#24231f"/><path d="M103 406 L125 414 M109 401 L130 410" stroke="#f3eddd" stroke-width="2"/></g>
+      <g id="gamba-destra"><path d="M187 319 L191 371 L209 402"/><path d="M203 391 Q220 389 227 406 Q261 413 267 427 L211 430 Q195 427 193 414 Z" fill="#24231f"/><path d="M212 403 L225 417 M219 402 L233 416" stroke="#f3eddd" stroke-width="2"/></g>
+    </g>
+    <g id="corpo">
+      <path d="M79 102 L197 145 L230 132 L233 318 L200 336 L87 296 Z" fill="#f3eddd"/>
+      <path d="M197 145 L230 132 L233 318 L200 336 Z" fill="#dfd6bd"/>
+      <path d="M197 145 L200 336 M211 157 L214 320 M220 151 L223 314" stroke-width="1.4"/>
+      <path d="M79 102 L87 296 L96 300 L90 111" fill="#b14b36"/>
+      <path d="M108 155 L149 168 L149 220 L109 208 Z" fill="#213782" stroke="#213782"/>
+      <path d="M117 170 L139 177 M117 180 L139 187 M117 190 L132 195" stroke="#f3eddd" stroke-width="1.5"/>
+      <path d="M104 129 Q113 122 117 134 Q121 140 126 135 L155 146" stroke-width="2"/>
+      <path d="M171 269 L193 278 L184 301 Z M196 278 L216 267 L211 299 Z" fill="#fffbef"/>
+      <path d="M191 282 L202 283 L205 295 L198 304 L188 295 Z" fill="#b14b36"/>
+      <path d="M194 301 L203 300 L218 351 L204 371 L185 352 Z" fill="#b14b36"/>
+    </g>
+    <g id="pagine" fill="#fffbef">
+      <path d="M89 103 Q72 61 57 47 Q108 52 192 139 Z"/>
+      <path d="M103 104 Q91 48 91 27 Q128 40 204 139 Z"/>
+      <path d="M143 115 Q137 48 148 20 Q177 55 211 136 Z"/>
+      <path d="M181 132 Q190 69 206 39 Q218 85 219 134 Z"/>
+      <path d="M198 140 Q224 80 235 64 L230 134 Z"/>
+      <path d="M74 58 Q114 77 177 128 M106 44 Q134 69 185 127 M152 37 L204 123" stroke-width="1.2"/>
+    </g>
+    <g id="braccia">
+      <g id="braccio-sinistro"><path d="M91 252 Q58 265 65 313 L78 327"/><path d="M77 318 Q88 315 91 322 L88 337 Q84 346 80 335 Q78 354 73 340 Q66 350 65 336 L66 324 Z" fill="#f3eddd"/></g>
+      <g id="braccio-destro"><path d="M229 252 L279 281 L294 287"/><path d="M292 281 Q302 278 310 284 L325 294 Q328 301 320 299 L309 294 Q321 309 314 309 L305 301 Q312 315 305 313 L296 302 Q291 312 286 302 L285 291 Z" fill="#f3eddd"/><g id="bastone"><path d="M299 303 Q291 283 304 285 Q317 286 312 305 L309 418 L302 426 L317 426" stroke-width="4"/></g></g>
+    </g>
+    <g id="sopracciglia" fill="#24231f"><path d="M153 191 L181 177 L187 186 L157 199 Z"/><path d="M202 178 L235 189 L231 198 L201 188 Z"/></g>
+    <g id="occhiali" stroke-width="3"><circle cx="169" cy="219" r="23" fill="#fffbef"/><circle cx="222" cy="217" r="23" fill="#fffbef"/><path d="M192 216 Q196 211 199 215 M146 214 L132 207 M245 212 L250 208"/></g>
+    <g id="occhi" fill="#24231f" stroke="none"><ellipse cx="174" cy="219" rx="4" ry="6"/><ellipse cx="225" cy="217" rx="4" ry="6"/></g>
+    <path d="M196 225 L190 244 L201 245" stroke-width="2"/>
+    <g id="baffi" fill="#24231f"><path d="M195 251 Q182 235 169 246 Q155 266 136 255 Q152 280 176 265 Z"/><path d="M198 251 Q209 234 222 247 Q237 267 254 253 Q242 280 219 265 Z"/></g>
+    <path d="M186 272 Q195 277 204 270" stroke-width="2"/>
+  </g>
+</svg>
