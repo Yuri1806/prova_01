@@ -3,69 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Le letture di Yuri. Un diario illustrato: libri sul comodino, pagine attraversate e letture ancora da incontrare.">
-  <meta name="theme-color" content="#f3eddd">
-  <title>Le letture di Yuri — Diario illustrato</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f3eddd'/%3E%3Ctext x='16' y='48' font-size='48' font-family='Georgia' fill='%23213782'%3Ey%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Le letture di Yuri: il diario personale dei libri in lettura, letti e da leggere.">
+  <meta name="theme-color" content="#FAF9F6">
+  <title>Le letture di Yuri — Diario di lettura</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23FAF9F6' stroke='%23191919' stroke-width='2' d='M6 3h20v25H6z'/%3E%3Cpath fill='%23191919' d='M16 15q-4-6-7 1-2 2-4 0 3 7 11 2 8 5 11-2-3 2-5-1-3-6-6 0'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/RobotoSerif-BlackCondensed.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="character.css">
   <script src="data/books.js" defer></script>
+  <script src="character.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#scaffali">Vai agli scaffali</a>
-  <div class="page">
+  <a class="skip-link" href="#scaffali">Vai ai libri</a>
+  <div class="page" id="inizio">
     <header class="masthead">
-      <a class="wordmark" href="#inizio" aria-label="Le letture di Yuri, inizio">y<span>.</span></a>
-      <p>Diario personale di lettura<br><span>Un inventario di piccole evasioni</span></p>
-      <span class="edition">Quaderno n. 01<br>Edizione in divenire</span>
+      <div class="masthead-meta"><p>Diario di lettura</p><p><span id="total-books">—</span> libri, per ora.</p></div>
+      <h1><span>Le letture</span> <span>di <span class="title-yuri">Yuri<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M5 12 Q145 1 294 7 M12 14 Q181 5 289 10"/></svg></span></span></h1>
     </header>
-    <main id="inizio">
-      <div class="opening">
-        <div class="opening-copy">
-          <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> Pagine, incontri, divagazioni</p>
-          <h1>Le letture<br>di <em>Yuri<span class="title-dot">.</span></em></h1>
-          <p class="intro">Ci sono libri che finiscono.<br>E altri che restano a farci compagnia.</p>
-          <p class="opening-note">Un posto per tenerli tutti: quelli aperti,<br>quelli vissuti, quelli ancora da incontrare.</p>
-          <span class="handwritten" aria-hidden="true">Una pagina alla volta ↗</span>
-        </div>
-        <figure class="theatre">
-          <div class="stage" id="stage" aria-hidden="true">
-            <span class="stage-number">FIG. 01</span><span class="stage-orbit"></span><span class="stage-star">✳</span>
-            <div class="actor" id="actor"><div class="character" id="character"></div></div>
-            <span class="stage-floor"></span>
-          </div>
-          <figcaption><span class="scene-destination" id="scene-destination">01 / Sto leggendo</span>Il custode delle pagine <span>— da uno schizzo di Yuri</span></figcaption>
-        </figure>
-      </div>
-      <div class="shelves" id="scaffali">
-        <div class="shelf-nav" role="tablist" aria-label="Scaffali di lettura">
-          <button type="button" id="tab-in-lettura" role="tab" aria-selected="true" aria-controls="panel-in-lettura" data-shelf="in-lettura"><span class="tab-number">01</span> Sto leggendo <span class="count" data-count="in-lettura">0</span></button>
-          <button type="button" id="tab-letto" role="tab" aria-selected="false" aria-controls="panel-letto" tabindex="-1" data-shelf="letto"><span class="tab-number">02</span> Letti <span class="count" data-count="letto">0</span></button>
-          <button type="button" id="tab-da-leggere" role="tab" aria-selected="false" aria-controls="panel-da-leggere" tabindex="-1" data-shelf="da-leggere"><span class="tab-number">03</span> Da leggere <span class="count" data-count="da-leggere">0</span></button>
-        </div>
-        <p class="demo-notice"><span aria-hidden="true">※</span> Un diario da riempire. I libri e le note qui sotto sono esempi dimostrativi, non letture o recensioni reali di Yuri.</p>
-        <p id="shelf-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-        <section id="panel-in-lettura" role="tabpanel" aria-labelledby="tab-in-lettura" tabindex="0">
-          <div class="shelf-heading"><div><p class="eyebrow">Scaffale 01 / Il presente</p><h2>Sul comodino<span>.</span></h2></div><p>Una storia aperta,<br>un segnalibro nel mezzo.</p></div>
-          <div class="book-list" data-books="in-lettura"></div>
-        </section>
-        <section id="panel-letto" role="tabpanel" aria-labelledby="tab-letto" tabindex="0" hidden>
-          <div class="shelf-heading"><div><p class="eyebrow">Scaffale 02 / Le tracce</p><h2>A libro chiuso<span>.</span></h2></div><p>L’ultima pagina passa.<br>Qualcosa rimane.</p></div>
-          <div class="book-list" data-books="letto"></div>
-        </section>
-        <section id="panel-da-leggere" role="tabpanel" aria-labelledby="tab-da-leggere" tabindex="0" hidden>
-          <div class="shelf-heading"><div><p class="eyebrow">Scaffale 03 / Le possibilità</p><h2>Prima o poi<span>.</span></h2></div><p>La bellezza dei libri<br>ancora da aprire.</p></div>
-          <div class="book-list" data-books="da-leggere"></div>
-        </section>
-        <noscript><p>Per sfogliare gli scaffali e aprire le note, attiva JavaScript nel browser.</p></noscript>
-      </div>
+
+    <div class="stage" id="stage" aria-hidden="true">
+      <svg class="stage-floor" viewBox="0 0 1200 8" preserveAspectRatio="none"><path d="M1 5 Q205 3 415 5 T810 4 L1199 5"/></svg>
+      <svg class="scenery book-stack" viewBox="0 0 90 46">
+        <path d="M6 39 L64 40 L64 32 L8 31 Z M12 30 L67 30 L68 23 L13 23 Z M8 22 L59 23 L60 15 L7 14 Z M16 14 L61 13 L62 6 L17 7 Z"/>
+        <path d="M13 34 L58 35 M14 37 L59 38 M19 26 L59 26 M12 18 L53 19 M22 10 L57 10 M76 40 L70 30 M77 40 L80 26 M79 41 L86 33"/>
+      </svg>
+      <svg class="scenery bookcase" viewBox="0 0 128 120">
+        <path d="M9 117 L8 7 L14 6 L15 114 M108 116 L109 4 L115 4 L114 117 M14 48 L109 49 L109 54 L14 53 M15 101 L109 103 L109 109 L15 107 M9 117 L115 117"/>
+        <path d="M19 46 L18 15 L24 14 L27 47 Z M29 47 L28 20 L34 19 L36 47 Z M41 47 L33 16 L39 14 L48 46 Z M51 47 L51 40 L74 40 L74 47 Z M77 47 L76 11 L83 11 L84 47 Z M87 46 L87 18 L94 19 L94 47 Z M97 47 L96 9 L103 8 L104 47 Z"/>
+        <path d="M21 102 L19 63 L25 62 L29 102 Z M32 102 L30 68 L37 67 L40 102 Z M44 102 L38 67 L44 65 L51 101 Z M58 101 L46 81 L52 78 L66 100 Z M76 101 L84 65 L91 67 L83 102 Z M89 102 L98 70 L104 71 L96 103 Z"/>
+        <path d="M21 22 L24 22 M31 25 L34 25 M80 18 L82 18 M90 24 L93 24 M99 16 L102 16 M22 70 L25 70 M33 77 L37 77 M84 76 L87 77 M98 81 L101 82 M2 118 L0 110 M4 118 L5 106 M120 118 L124 110"/>
+      </svg>
+      <div class="actor" id="actor"><div class="actor-facing" id="actor-facing"><div class="character" id="character"></div></div></div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Vai a uno scaffale">
+      <button type="button" data-destination="in-lettura" aria-pressed="true" aria-controls="scaffale-in-lettura">Sto leggendo</button>
+      <button type="button" data-destination="letto" aria-pressed="false" aria-controls="scaffale-letto">Letti</button>
+      <button type="button" data-destination="da-leggere" aria-pressed="false" aria-controls="scaffale-da-leggere">Da leggere</button>
+    </nav>
+
+    <main class="catalog" id="scaffali">
+      <section class="shelf" id="scaffale-in-lettura" aria-labelledby="heading-in-lettura" data-shelf="in-lettura">
+        <h2 id="heading-in-lettura"><button class="shelf-control" type="button" data-destination="in-lettura" aria-pressed="true"><span class="shelf-label label-reading">Sto leggendo</span><span class="shelf-count" data-count="in-lettura">—</span></button></h2>
+        <ul class="book-list" id="books-in-lettura"></ul>
+        <div class="shelf-bottom"><p class="visible-count" data-visible-count="in-lettura" aria-live="polite"></p></div>
+      </section>
+      <section class="shelf" id="scaffale-letto" aria-labelledby="heading-letto" data-shelf="letto">
+        <h2 id="heading-letto"><button class="shelf-control" type="button" data-destination="letto" aria-pressed="false"><span class="shelf-label label-read">Letti</span><span class="shelf-count" data-count="letto">—</span></button></h2>
+        <ul class="book-list" id="books-letto"></ul>
+        <div class="shelf-bottom"><p class="visible-count" data-visible-count="letto" aria-live="polite"></p><button class="show-more" type="button" data-more="letto" aria-controls="books-letto" hidden>Mostra altri <span aria-hidden="true">→</span></button></div>
+      </section>
+      <section class="shelf" id="scaffale-da-leggere" aria-labelledby="heading-da-leggere" data-shelf="da-leggere">
+        <h2 id="heading-da-leggere"><button class="shelf-control" type="button" data-destination="da-leggere" aria-pressed="false"><span class="shelf-label">Da leggere</span><span class="shelf-count" data-count="da-leggere">—</span></button></h2>
+        <ul class="book-list" id="books-da-leggere"></ul>
+        <div class="shelf-bottom"><p class="visible-count" data-visible-count="da-leggere" aria-live="polite"></p><button class="show-more" type="button" data-more="da-leggere" aria-controls="books-da-leggere" hidden>Mostra altri <span aria-hidden="true">→</span></button></div>
+      </section>
+      <noscript><p>Attiva JavaScript per consultare il catalogo e aprire i dettagli dei libri.</p></noscript>
     </main>
-    <footer class="colophon"><span>Le letture di Yuri <span aria-hidden="true">✳</span> Diario illustrato</span><span>Nessuna fretta. C’è ancora una pagina.</span></footer>
+    <p class="sr-only" id="navigation-status" role="status"></p>
+    <footer class="colophon"><span>Le letture di Yuri</span><a href="#inizio">Torna alla testata <span aria-hidden="true">↑</span></a></footer>
   </div>
+
   <dialog id="book-dialog" aria-labelledby="detail-title" aria-describedby="detail-author">
-    <div class="dialog-top"><span class="eyebrow">Una nota a margine</span><button type="button" id="close-dialog" autofocus aria-label="Chiudi il dettaglio del libro">Chiudi <span aria-hidden="true">×</span></button></div>
-    <p class="detail-index" id="detail-index"></p><h2 id="detail-title"></h2><p id="detail-author"></p><p class="detail-meta" id="detail-meta"></p>
-    <div class="note-label">Dal quaderno</div><p id="detail-note"></p><p class="detail-demo" id="detail-demo">Contenuto dimostrativo — non è una recensione di Yuri.</p>
+    <div class="dialog-top"><span>Dal catalogo</span><button id="close-dialog" type="button" autofocus>Chiudi <span aria-hidden="true">×</span></button></div>
+    <h2 id="detail-title"></h2>
+    <p id="detail-author"></p>
+    <dl id="detail-metadata"></dl>
+    <div id="detail-notes" hidden><h3>Note personali</h3><p></p></div>
   </dialog>
 </body>
 </html>

@@ -1,0 +1,59 @@
+/* Scena e articolazioni indipendenti dal catalogo. Coordinate SVG: 240 x 320. */
+.stage { position: relative; height: 154px; margin-top: 8px; overflow: hidden; }
+.stage-floor { position: absolute; bottom: 3px; left: 0; width: 100%; height: 8px; fill: none; stroke: var(--ink); stroke-width: 1.8; }
+.scenery { position: absolute; bottom: 7px; fill: var(--paper); stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.book-stack { left: 5px; width: 69px; height: 36px; }
+.bookcase { right: 6px; width: 112px; height: 108px; }
+.actor { position: absolute; left: 0; bottom: 7px; width: 105px; height: 140px; visibility: hidden; will-change: transform; z-index: 1; }
+.actor.ready { visibility: visible; }
+.actor-facing, .character, .character svg { display: block; width: 100%; height: 100%; }
+.actor-facing { transform-origin: 50% 50%; }
+.actor-facing.facing-left { transform: scaleX(-1); }
+.character { transform-origin: 50% 85%; }
+.character svg { overflow: visible; }
+.character svg g { transform-box: view-box; }
+#figura { transform-origin: 124px 194px; }
+#corpo { transform-origin: 124px 194px; }
+#pagine { transform-origin: 94px 45px; }
+#occhiali { transform-origin: 142px 108px; }
+#baffi { transform-origin: 143px 139px; }
+#cravatta { transform-origin: 140px 160px; }
+#braccia { transform-origin: 126px 132px; }
+#braccio-sinistro { transform-origin: 86px 133px; }
+#braccio-destro { transform-origin: 166px 128px; }
+#bastone { transform-origin: 190px 181px; }
+#gambe { transform-origin: 125px 194px; }
+#gamba-sinistra { transform-origin: 107px 191px; }
+#gamba-destra { transform-origin: 142px 190px; }
+#ginocchio-sinistro { transform-origin: 100px 242px; }
+#ginocchio-destro { transform-origin: 147px 242px; }
+
+/* Nessuna animazione a riposo. La classe viene rimossa anche dopo clic rapidi o resize. */
+.is-running #figura { animation: body-bounce 190ms ease-in-out infinite; }
+.is-running #gamba-destra { animation: thigh 380ms ease-in-out infinite; }
+.is-running #gamba-sinistra { animation: thigh 380ms ease-in-out -190ms infinite; }
+.is-running #ginocchio-destro { animation: knee 380ms ease-in-out infinite; }
+.is-running #ginocchio-sinistro { animation: knee 380ms ease-in-out -190ms infinite; }
+.is-running #braccio-destro { animation: arm 380ms ease-in-out -190ms infinite; }
+.is-running #braccio-sinistro { animation: arm 380ms ease-in-out infinite; }
+.is-running #pagine { animation: pages-follow 190ms ease-in-out infinite alternate; }
+.is-running #cravatta { animation: tie-follow 190ms ease-in-out infinite alternate; }
+.is-running #bastone { animation: cane-follow 380ms ease-in-out infinite; }
+@keyframes body-bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes thigh { 0%,100% { transform: rotate(-30deg); } 50% { transform: rotate(31deg); } }
+@keyframes knee { 0%,100% { transform: rotate(8deg); } 28% { transform: rotate(62deg); } 55% { transform: rotate(30deg); } 78% { transform: rotate(4deg); } }
+@keyframes arm { 0%,100% { transform: rotate(-23deg); } 50% { transform: rotate(28deg); } }
+@keyframes pages-follow { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+@keyframes tie-follow { from { transform: rotate(32deg); } to { transform: rotate(53deg); } }
+@keyframes cane-follow { 0%,100% { transform: rotate(12deg); } 50% { transform: rotate(35deg); } }
+
+@media (max-width: 1100px) { .bookcase { width: 88px; height: 86px; } }
+@media (max-width: 950px) { .bookcase { display: none; } }
+@media (max-width: 860px) {
+  .stage { height: 128px; margin-top: 8px; }
+  .actor { width: 78.75px; height: 105px; bottom: 7px; }
+  .scenery { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .character, .character * { animation: none !important; }
+}
