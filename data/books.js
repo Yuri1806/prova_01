@@ -144,7 +144,7 @@ window.LIBRI = [
       "2026-07-18"
     ],
     "data_aggiunta": "2026-06-21",
-    "note_personali": null
+    "note_personali": "Regalato da Sandra per il mio compleanno."
   },
   {
     "id": "libro-e297ce8dfcf8",
